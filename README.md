@@ -27,7 +27,9 @@ Informations:
 -------------
 
 Author: Valentin Chemiere <vigor64@myopera.com>
-Version: O.1
+
+Version: 0.1
+
 Date: 24/02/2013
 
 Written in python 2.7 with pygtk and xmlrpc
