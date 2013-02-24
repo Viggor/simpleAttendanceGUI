@@ -10,6 +10,7 @@ They can sign in one click, the program choose automaticaly if they sign in or
 sign out.
 Only compatible with OpenERP 6.1
 
+
 How to use:
 -----------
 
@@ -26,10 +27,16 @@ And that's all
 Informations:
 -------------
 
-Author: Valentin Chemiere <vigor64@myopera.com>
+Author: Valentin Chemiere <vchemiere@myopera.com>
 
 Version: 0.1
 
 Date: 24/02/2013
 
 Written in python 2.7 with pygtk and xmlrpc
+
+
+How to contribute:
+------------------
+
+For any suggestion, question or submission write me at <vchemiere@myopera.com>
