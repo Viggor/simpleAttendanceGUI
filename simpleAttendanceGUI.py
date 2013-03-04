@@ -105,15 +105,29 @@ class simpleAttendanceGUI:
                                               "Please enter server address in configuration menu")
             warningDialog.run()
             warningDialog.destroy()
-        #init xmlrpc connection with the server
-        sock_common = xmlrpclib.ServerProxy('http://' + server_address + '/xmlrpc/common')
-        uid = sock_common.login(dbname, userlogin, pwd)
-        sock = xmlrpclib.ServerProxy('http://' + server_address + '/xmlrpc/object')
 
-        #get user id
-        args = [('login', '=', userlogin)]
-        user_ids = sock.execute(dbname, uid, pwd, 'res.users', 'search', args)
-        user_id = user_ids[0]
+        try:
+            #init xmlrpc connection with the server
+            sock_common = xmlrpclib.ServerProxy('http://' + server_address + '/xmlrpc/common')
+            uid = sock_common.login(dbname, userlogin, pwd)
+            sock = xmlrpclib.ServerProxy('http://' + server_address + '/xmlrpc/object')
+
+            #get user id
+            args = [('login', '=', userlogin)]
+            user_ids = sock.execute(dbname, uid, pwd, 'res.users', 'search', args)
+            user_id = user_ids[0]
+        except Exception as e:
+            warningConnectDialog = gtk.MessageDialog(self.mainWindow,
+                                              gtk.DIALOG_DESTROY_WITH_PARENT,
+                                              gtk.MESSAGE_WARNING,
+                                              gtk.BUTTONS_CLOSE,
+                                              "Please verify your server "
+                                                     "information or your "
+                                                     "network connectivity: " + str(e))
+            warningConnectDialog.run()
+            warningConnectDialog.destroy()
+            return 0
+
 
         #get emp data
         args= [('user_id', '=', user_id)]
