@@ -27,7 +27,7 @@ And that's all
 Informations:
 -------------
 
-Author: Valentin Chemiere <vchemiere@myopera.com>
+Author: Valentin Chemiere <vchemiere@viggor.eu>
 
 Version: 0.1
 
@@ -39,4 +39,4 @@ Written in python 2.7 with pygtk and xmlrpc
 How to contribute:
 ------------------
 
-For any suggestion, question or submission write me at <vchemiere@myopera.com>
+For any suggestion, question or submission write me at <vchemiere@viggor.eu>
